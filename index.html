@@ -54,7 +54,6 @@ text-decoration:none;
 color:#333;
 font-weight:600;
 cursor:pointer;
-position:relative;
 transition:0.3s;
 }
 
@@ -123,6 +122,10 @@ cursor:pointer;
 transition:all 0.3s ease;
 font-weight:bold;
 letter-spacing:0.5px;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .box:hover{
@@ -240,21 +243,17 @@ letter-spacing:5px;
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
 <div class="logo">SECURE PASS</div>
 
 <div class="nav-links">
-<a onclick="goStudent()">STUDENT</a>
-<a onclick="goFaculty()">FACULTY</a>
-<a onclick="goHOD()">HOD</a>
-<a onclick="goSecurity()">SECURITY</a>
+<a href="student.html">STUDENT</a>
+<a href="Facult.html">FACULTY</a>
+<a href="hod.html">HOD</a>
+<a href="sec.html">SECURITY</a>
 <a onclick="openContact()">CONTACT</a>
 </div>
 </div>
-
-<!-- MAIN CONTENT -->
 
 <div class="container">
 
@@ -265,34 +264,22 @@ letter-spacing:5px;
 
 <div class="access-boxes">
 
-<div class="box" onclick="goStudent()">
-Student Access
-</div>
+<a class="box" href="student.html">Student Access</a>
 
-<div class="box" onclick="goFaculty()">
-Faculty Access
-</div>
+<a class="box" href="Facult.html">Faculty Access</a>
 
-<div class="box" onclick="goHOD()">
-HOD Access
-</div>
+<a class="box" href="hod.html">HOD Access</a>
 
-<div class="box" onclick="goSecurity()">
-Security Access
-</div>
+<a class="box" href="sec.html">Security Access</a>
 
 </div>
 
 </div>
 </div>
-
-<!-- BIG BOTTOM BRAND -->
 
 <div class="bottom-brand">
 <h1>SECURE PASS</h1>
 </div>
-
-<!-- CONTACT POPUP -->
 
 <div class="modal" id="contactModal">
 
@@ -318,22 +305,6 @@ document.getElementById("contactModal").style.display="flex";
 
 function closeContact(){
 document.getElementById("contactModal").style.display="none";
-}
-
-function goStudent(){
-window.location.href="student.html";
-}
-
-function goFaculty(){
-window.location.href="Facult.html";
-}
-
-function goHOD(){
-window.location.href="hod.html";
-}
-
-function goSecurity(){
-window.location.href="sec.html";
 }
 
 </script>
