@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty Portal Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background-image:url("C:/Users/Sreehari/Downloads/secure pass/img.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#2c3e50;
+}
+
+.home-btn{
+background:#1f3b64;
+color:white;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.home-btn:hover{
+background:#2e558a;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+}
+
+/* LOGIN CARD */
+
+.card{
+background:rgba(255,255,255,0.95);
+padding:50px;
+border-radius:15px;
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+text-align:center;
+max-width:750px;
+width:100%;
+animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card h2{
+margin-bottom:30px;
+color:#1f3b64;
+}
+
+/* LOGIN BOX */
+
+.login-box{
+background:#f1f3f6;
+padding:30px;
+border-radius:10px;
+max-width:350px;
+margin:auto;
+box-shadow:inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+.input-group{
+margin-bottom:20px;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+transition:0.3s;
+}
+
+.input-group input:focus{
+border-color:#1f3b64;
+outline:none;
+box-shadow:0 0 6px rgba(31,59,100,0.3);
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+background:linear-gradient(135deg,#1f3b64,#3d6cb9);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
+}
+
+.login-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.login-btn:active{
+transform:scale(0.97);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:600px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+.card{
+padding:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">SECURE PASS</div>
+
+<a class="home-btn" onclick="goHome()">HOME</a>
+
+</div>
+
+<!-- LOGIN SECTION -->
+
+<div class="container">
+
+<div class="card">
+
+<h2>Faculty Portal Login</h2>
+
+<div class="login-box">
+
+<div class="input-group">
+<input type="text" placeholder="Faculty ID / Login ID">
+</div>
+
+<div class="input-group">
+<input type="password" placeholder="Password">
+</div>
+
+<button class="login-btn">Login</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function goHome(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/h.html";
+}
+
+</script>
+
+</body>
+</html>

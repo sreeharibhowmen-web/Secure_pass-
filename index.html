@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secure Pass</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background-image:url("C:/Users/Sreehari/Downloads/secure pass/img.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+min-height:100vh;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#2c3e50;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+cursor:pointer;
+position:relative;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#1f3b64;
+transform:scale(1.05);
+}
+
+/* MAIN CARD */
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+text-align:center;
+max-width:700px;
+width:100%;
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.card p{
+color:#555;
+margin-bottom:35px;
+}
+
+/* ACCESS BOXES */
+
+.access-boxes{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.box{
+background:linear-gradient(135deg,#1f3b64,#3d6cb9);
+color:white;
+padding:25px;
+width:180px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:all 0.3s ease;
+font-weight:bold;
+letter-spacing:0.5px;
+}
+
+.box:hover{
+transform:translateY(-8px) scale(1.05);
+box-shadow:0 12px 25px rgba(0,0,0,0.3);
+}
+
+.box:active{
+transform:scale(0.95);
+}
+
+/* POPUP MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+max-width:350px;
+width:90%;
+animation:popup 0.4s ease;
+}
+
+@keyframes popup{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.close-btn{
+margin-top:20px;
+padding:8px 15px;
+background:#2c3e50;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.close-btn:hover{
+background:#1f3b64;
+}
+
+/* BIG BOTTOM TEXT */
+
+.bottom-brand{
+margin-top:80px;
+text-align:center;
+}
+
+.bottom-brand h1{
+font-size:120px;
+font-weight:900;
+letter-spacing:10px;
+color:rgba(255,255,255,0.15);
+text-shadow:0 5px 20px rgba(0,0,0,0.3);
+user-select:none;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+.nav-links{
+gap:15px;
+justify-content:center;
+}
+
+.container{
+padding:20px;
+}
+
+.card{
+padding:25px;
+}
+
+.box{
+width:140px;
+padding:18px;
+font-size:14px;
+}
+
+.bottom-brand h1{
+font-size:60px;
+letter-spacing:5px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+<div class="logo">SECURE PASS</div>
+
+<div class="nav-links">
+<a onclick="goStudent()">STUDENT</a>
+<a onclick="goFaculty()">FACULTY</a>
+<a onclick="goHOD()">HOD</a>
+<a onclick="goSecurity()">SECURITY</a>
+<a onclick="openContact()">CONTACT</a>
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+<div class="card">
+
+<h2>Welcome to SECURE PASS.</h2>
+<p>Please select your user type to proceed.</p>
+
+<div class="access-boxes">
+
+<div class="box" onclick="goStudent()">
+Student Access
+</div>
+
+<div class="box" onclick="goFaculty()">
+Faculty Access
+</div>
+
+<div class="box" onclick="goHOD()">
+HOD Access
+</div>
+
+<div class="box" onclick="goSecurity()">
+Security Access
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- BIG BOTTOM BRAND -->
+
+<div class="bottom-brand">
+<h1>SECURE PASS</h1>
+</div>
+
+<!-- CONTACT POPUP -->
+
+<div class="modal" id="contactModal">
+
+<div class="modal-content">
+
+<h3>Admin Contact</h3>
+
+<p><b>Name:</b> Sreehari B</p>
+<p><b>Phone:</b> 9846899055</p>
+<p><b>Email:</b> harisree232005@gmail.com</p>
+
+<button class="close-btn" onclick="closeContact()">Close</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openContact(){
+document.getElementById("contactModal").style.display="flex";
+}
+
+function closeContact(){
+document.getElementById("contactModal").style.display="none";
+}
+
+function goStudent(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/student.html";
+}
+
+function goFaculty(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/Facult.html";
+}
+
+function goHOD(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/hod.html";
+}
+
+function goSecurity(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/sec.html";
+}
+
+</script>
+
+</body>
+</html>

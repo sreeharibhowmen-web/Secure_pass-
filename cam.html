@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Pass - Gate Security Scanner</title>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:url("C:/Users/Sreehari/Downloads/secure pass/img.png") no-repeat center center/cover;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#f4f4f4;
+}
+
+header h1{
+    color:#1d3557;
+}
+
+.home-btn{
+    background:#1d3557;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+/* MAIN BOX */
+
+.container{
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.container h2{
+    color:#1d3557;
+}
+
+/* CAMERA BOX */
+
+#reader{
+    width:100%;
+    max-width:350px;
+    margin:auto;
+    margin-top:20px;
+}
+
+/* RESULT BOX */
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    color:green;
+    font-weight:bold;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:600px){
+
+header{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+.container{
+    margin:40px auto;
+    padding:25px;
+}
+
+#reader{
+    width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+<h1>SECURE PASS</h1>
+
+<a class="home-btn" onclick="goHome()">HOME</a>
+
+</header>
+
+
+<div class="container">
+
+<h2>Gate Security Scanner</h2>
+
+<div id="reader"></div>
+
+<div id="result">Scan Student QR Code</div>
+
+</div>
+
+
+
+<script>
+
+function goHome(){
+window.location.href="file:///C:/Users/Sreehari/Downloads/secure%20pass/h.html";
+}
+
+function onScanSuccess(decodedText, decodedResult) {
+
+document.getElementById("result").innerHTML =
+"QR Code Detected: " + decodedText;
+
+}
+
+function onScanError(error) {
+}
+
+let html5QrcodeScanner = new Html5QrcodeScanner(
+"reader",
+{ fps: 10, qrbox: 250 });
+
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+</script>
+
+
+</body>
+</html>
