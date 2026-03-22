@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gate Security Panel</title>
 
 <style>
@@ -9,6 +12,7 @@ body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
     background:url("img.png") no-repeat center center/cover;
+    min-height:100vh;
 }
 
 /* HEADER */
@@ -17,12 +21,14 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
+    padding:15px 20px;
     background:#f4f4f4;
+    flex-wrap:wrap;
 }
 
 header h1{
     color:#1d3557;
+    font-size:22px;
 }
 
 .home-btn{
@@ -38,9 +44,9 @@ header h1{
 .container{
     width:90%;
     max-width:500px;
-    margin:80px auto;
+    margin:50px auto;
     background:rgba(255,255,255,0.9);
-    padding:40px;
+    padding:30px;
     border-radius:12px;
     text-align:center;
 }
@@ -53,7 +59,7 @@ header h1{
 
 #reader{
     width:100%;
-    max-width:350px;
+    max-width:300px;
     margin:auto;
     margin-top:20px;
 }
@@ -65,6 +71,20 @@ header h1{
     font-size:18px;
     font-weight:bold;
     color:green;
+}
+
+/* BUTTON */
+
+button{
+    display:block;
+    margin:20px auto;
+    padding:12px 20px;
+    border:none;
+    border-radius:6px;
+    background:#1d3557;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
 }
 
 /* MOBILE */
@@ -104,7 +124,9 @@ header{
 <h3 id="result">Scan Student QR Code</h3>
 
 </div>
+
 <button onclick="restartScanner()">🔄 Scan Again</button>
+
 <script>
 function goHome(){
 window.location.href="index.html";
@@ -113,7 +135,45 @@ window.location.href="index.html";
 
 <!-- KEEP THESE (important) -->
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-<script type="module" src="js/security.js"></script>
+
+<!-- 🔥 UPDATED SCANNER SCRIPT -->
+<script type="module">
+
+const resultText = document.getElementById("result");
+let scanner;
+
+function startScanner(){
+
+scanner = new Html5Qrcode("reader");
+
+scanner.start(
+    { facingMode: "environment" }, // 🔥 rear camera
+    {
+        fps: 10,
+        qrbox: 250
+    },
+    (decodedText) => {
+        resultText.innerText = "Scanned: " + decodedText;
+        scanner.stop();
+    },
+    (error) => {
+        console.warn(error);
+    }
+);
+
+}
+
+function restartScanner(){
+    if(scanner){
+        scanner.stop().then(() => {
+            startScanner();
+        });
+    }
+}
+
+startScanner();
+
+</script>
 
 </body>
 </html>
