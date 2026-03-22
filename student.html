@@ -2,6 +2,10 @@
 <html>
 <head>
 <title>Student Dashboard</title>
+
+<!-- ✅ IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="css/style.css">
 
 <style>
@@ -28,6 +32,7 @@ align-items:center;
 padding:15px 40px;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
+flex-wrap:wrap; /* ✅ allow wrapping on small screens */
 }
 
 .logo{
@@ -42,6 +47,7 @@ color:white;
 padding:8px 15px;
 border-radius:6px;
 cursor:pointer;
+margin-top:5px; /* ✅ spacing for mobile */
 }
 
 /* CONTAINER */
@@ -59,6 +65,7 @@ padding:40px;
 border-radius:15px;
 box-shadow:0 15px 35px rgba(0,0,0,0.25);
 width:600px;
+max-width:100%; /* ✅ prevents overflow */
 animation:fadeIn 0.6s ease;
 }
 
@@ -81,6 +88,15 @@ padding:10px;
 border-radius:8px;
 border:1px solid #ccc;
 resize:none;
+}
+
+/* INPUT */
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 
 /* BUTTON */
@@ -108,6 +124,8 @@ margin-top:10px;
 border-radius:6px;
 display:flex;
 justify-content:space-between;
+flex-wrap:wrap; /* ✅ prevent overflow */
+gap:5px;
 }
 
 .status{
@@ -117,6 +135,41 @@ font-weight:bold;
 .pending{color:orange;}
 .approved{color:green;}
 .rejected{color:red;}
+
+/* ✅ MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+.navbar{
+padding:10px 20px;
+}
+
+.logo{
+font-size:20px;
+}
+
+.container{
+padding:20px 10px;
+}
+
+.card{
+padding:20px;
+width:100%;
+}
+
+h2{
+font-size:20px;
+}
+
+textarea{
+height:80px;
+}
+
+button{
+font-size:14px;
+padding:10px;
+}
+
+}
 
 </style>
 
@@ -157,5 +210,6 @@ window.location.href="index.html";
 <!-- KEEP THIS (important for backend logic) -->
 <script type="module" src="js/student.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </body>
 </html>
