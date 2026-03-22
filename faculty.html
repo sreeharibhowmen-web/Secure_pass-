@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Faculty Approval</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:url("img.png") no-repeat center center/cover;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#f4f4f4;
+}
+
+header h1{
+    color:#1d3557;
+}
+
+.home-btn{
+    background:#1d3557;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* 🔹 NEW: Logs button */
+.logs-btn{
+    background:#457b9d;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:80px auto;
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:12px;
+}
+
+/* TITLE */
+
+.container h2{
+    text-align:center;
+    color:#1d3557;
+    margin-bottom:20px;
+}
+
+/* REQUEST LIST */
+
+#requests{
+    margin-top:20px;
+}
+
+/* REQUEST CARD */
+
+.request-card{
+    background:#f1f3f6;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* BUTTONS */
+
+.btn{
+    padding:8px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-right:10px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.approve{
+    background:green;
+    color:white;
+}
+
+.reject{
+    background:red;
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+header{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+.container{
+    margin:40px auto;
+    padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>SECURE PASS</h1>
+
+<!-- 🔹 Added Logs button -->
+<div style="display:flex; align-items:center;">
+    <div class="home-btn" onclick="goHome()">HOME</div>
+    <div class="logs-btn" onclick="goLogs()">LOGS</div>
+</div>
+
+</header>
+
+<div class="container">
+
+<h2>Faculty Approval Panel</h2>
+
+<div id="requests"></div>
+
+</div>
+
+<script>
+function goHome(){
+window.location.href="index.html";
+}
+
+/* 🔹 NEW: Logs navigation */
+function goLogs(){
+window.location.href="logs.html";
+}
+</script>
+
+<!-- IMPORTANT: keep this -->
+<script type="module" src="js/faculty.js"></script>
+
+</body>
+</html>

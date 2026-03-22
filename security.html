@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gate Security Panel</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:url("img.png") no-repeat center center/cover;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#f4f4f4;
+}
+
+header h1{
+    color:#1d3557;
+}
+
+.home-btn{
+    background:#1d3557;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* MAIN BOX */
+
+.container{
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.container h2{
+    color:#1d3557;
+}
+
+/* SCANNER BOX */
+
+#reader{
+    width:100%;
+    max-width:350px;
+    margin:auto;
+    margin-top:20px;
+}
+
+/* RESULT */
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+    color:green;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+header{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+.container{
+    margin:40px auto;
+    padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>SECURE PASS</h1>
+<div class="home-btn" onclick="goHome()">HOME</div>
+</header>
+
+<div class="container">
+
+<h2>Gate Security Scanner</h2>
+
+<div id="reader"></div>
+
+<h3 id="result">Scan Student QR Code</h3>
+
+</div>
+<button onclick="restartScanner()">🔄 Scan Again</button>
+<script>
+function goHome(){
+window.location.href="index.html";
+}
+</script>
+
+<!-- KEEP THESE (important) -->
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script type="module" src="js/security.js"></script>
+
+</body>
+</html>

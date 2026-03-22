@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Entry Logs</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:url("img.png") no-repeat center/cover;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:#f4f4f4;
+}
+
+.container{
+  width:90%;
+  max-width:800px;
+  margin:50px auto;
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:10px;
+}
+
+.log{
+  background:#f1f3f6;
+  padding:15px;
+  margin-bottom:10px;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>SECURE PASS</h2>
+<button onclick="goHome()">HOME</button>
+</header>
+
+<div class="container">
+
+<h2>Entry Logs</h2>
+
+<div id="logs"></div>
+
+</div>
+
+<script>
+function goHome(){
+  window.location.href="index.html";
+}
+</script>
+
+<script type="module" src="js/logs.js"></script>
+
+</body>
+</html>
