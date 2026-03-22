@@ -3,6 +3,8 @@
 <head>
 <title>HOD Approval</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 
 body{
@@ -19,10 +21,21 @@ header{
     align-items:center;
     padding:15px 40px;
     background:#f4f4f4;
+    flex-wrap:wrap; /* ✅ allows wrapping on mobile */
 }
 
 header h1{
     color:#1d3557;
+}
+
+/* BUTTON GROUP */
+
+.header-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .home-btn{
@@ -33,14 +46,14 @@ header h1{
     cursor:pointer;
 }
 
-/* 🔹 NEW: Logs button style */
+/* 🔹 Logs button */
+
 .logs-btn{
     background:#457b9d;
     color:white;
     padding:10px 20px;
     border-radius:5px;
     cursor:pointer;
-    margin-left:10px;
 }
 
 /* MAIN CONTAINER */
@@ -76,12 +89,13 @@ header h1{
     margin-bottom:15px;
     border-radius:8px;
     box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    word-wrap:break-word; /* ✅ prevents overflow */
 }
 
 /* BUTTONS */
 
 .btn{
-    padding:8px 15px;
+    padding:10px 15px;
     border:none;
     border-radius:5px;
     cursor:pointer;
@@ -111,8 +125,24 @@ header{
 }
 
 .container{
-    margin:40px auto;
-    padding:25px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.header-buttons{
+    justify-content:center;
+}
+
+.home-btn,
+.logs-btn{
+    width:100%;
+    max-width:200px;
+    text-align:center;
+}
+
+.btn{
+    width:100%;
+    margin-right:0;
 }
 
 }
@@ -126,8 +156,8 @@ header{
 <header>
 <h1>SECURE PASS</h1>
 
-<!-- 🔹 Added Logs button -->
-<div style="display:flex; align-items:center;">
+<!-- 🔹 Updated wrapper (no functional change) -->
+<div class="header-buttons">
     <div class="home-btn" onclick="goHome()">HOME</div>
     <div class="logs-btn" onclick="goLogs()">LOGS</div>
 </div>
@@ -147,7 +177,7 @@ function goHome(){
 window.location.href="index.html";
 }
 
-/* 🔹 NEW: Logs navigation */
+/* 🔹 Logs navigation */
 function goLogs(){
 window.location.href="logs.html";
 }
