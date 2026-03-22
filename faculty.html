@@ -3,6 +3,9 @@
 <head>
 <title>Faculty Approval</title>
 
+<!-- ✅ IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 
 body{
@@ -19,10 +22,19 @@ header{
     align-items:center;
     padding:15px 40px;
     background:#f4f4f4;
+    flex-wrap:wrap; /* ✅ allow wrap */
 }
 
 header h1{
     color:#1d3557;
+}
+
+/* BUTTON GROUP */
+header > div{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap; /* ✅ wrap buttons */
+    gap:10px;
 }
 
 .home-btn{
@@ -40,7 +52,6 @@ header h1{
     padding:10px 20px;
     border-radius:5px;
     cursor:pointer;
-    margin-left:10px;
 }
 
 /* MAIN CONTAINER */
@@ -100,7 +111,7 @@ header h1{
     color:white;
 }
 
-/* MOBILE */
+/* ✅ MOBILE IMPROVEMENTS */
 
 @media(max-width:600px){
 
@@ -108,11 +119,42 @@ header{
     flex-direction:column;
     gap:10px;
     text-align:center;
+    padding:10px 20px;
+}
+
+header h1{
+    font-size:20px;
+}
+
+header > div{
+    justify-content:center;
+    width:100%;
+}
+
+.home-btn,
+.logs-btn{
+    width:100%; /* ✅ full width buttons */
+    text-align:center;
+    padding:10px;
 }
 
 .container{
     margin:40px auto;
-    padding:25px;
+    padding:20px;
+    width:95%;
+}
+
+.container h2{
+    font-size:20px;
+}
+
+.request-card{
+    padding:12px;
+}
+
+.btn{
+    width:100%; /* ✅ stack buttons */
+    margin-right:0;
 }
 
 }
